@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIForge — FastAPI Component Studio</title>
+  
+  <!-- Favicon (OpenAI Uslubidagi Vektorli va Klassik Favicon) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  
+  <!-- Nafis Shriftlar: Inter va Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tashqi (External) CSS Fayllar (OpenAI ChatGPT Uslubi) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- 1. YUQORI TASMA (ChatGPT Top Navbar) -->
+  <header class="top-nav">
+    <div class="brand-section">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span>UIForge</span>
+      </div>
+      <div class="header-toggle-icon" id="theme-toggle-btn" title="Mavzuni almashtirish (Oq / Qora)" role="button" tabindex="0">
+        <!-- Qorong'i rejimda Oy belgisi (Qorong'i mavzuga mos) -->
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Yorug' rejimda Quyosh belgisi (Yorug' mavzuga mos) -->
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y1="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </div>
+    </div>
+
+    <!-- O'rtadagi Nafis Pill Switcher -->
+    <div class="nav-pill-switcher">
+      <button class="mode-pill-btn active">Interactive UI</button>
+      <button class="mode-pill-btn">Live Telemetry</button>
+    </div>
+  </header>
+
+  <!-- 2. ASOSIY IKKI USTUNLI QOBIQ -->
+  <div class="layout-container">
+    
+    <!-- CHAP TOMON: CHATGPT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-category">Components</div>
+        
+        <a href="#" class="nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          <span>Dynamic Dropdown</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Live Search Bar</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+          <span>Pagination</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+          <span>Modal Dialog</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          <span>Checkbox Filters</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <span>File Upload</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- O'NG ASOSIY MAYDON (Markazlashtirilgan, nafis va toza) -->
+    <main class="content-area">
+      <div class="content-inner">
+
+        <!-- 1. TUSHUNTIRISH MATNI (DOCS SECTION - YUQORIDA) -->
+        <div class="component-docs">
+          <h1 class="docs-title">Dynamic Dropdown</h1>
+          <p class="docs-desc">
+            <strong>Dynamic Dropdown (Dinamik tanlov ro'yxati)</strong> — variantlari HTML kod ichida qotib qolmagan, balki ma'lumotlar bazasidan asinxron tarzda yuklanuvchi interaktiv komponent. Foydalanuvchi biron elementni tanlaganda, butun veb-sahifani qayta yuklamasdan (SPA rejimida) serverga parametr jo'natadi va kerakli ma'lumotlarni real vaqtda saralab oladi.
+          </p>
+          <div class="docs-features">
+            <div class="feature-item">
+              <span class="feature-label">Qayerda ishlatiladi:</span>
+              <span class="feature-text">Kategoriyalar bo'yicha saralash, bog'langan (cascade) manzillar ro'yxati (Viloyat &rarr; Tuman), holat filtratsiyasi (Status) va boshqaruv panellari (Dashboard).</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-label">Oddiy select'dan farqi:</span>
+              <span class="feature-text">Ma'lumotlar hardcode qilinmaydi — PostgreSQL bazasiga yangi ma'lumot kiritilishi bilan ro'yxat avtomatik yangilanadi va kiritilgan har bir parametr Pydantic modeli orqali xavfsizlik tekshiruvidan o'tadi.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TO'G'RI TO'RTBURCHAK RAMKA (O'rtada komponent joylashgan) -->
+        <div class="component-canvas">
+          <div class="custom-select-widget" id="custom-select-widget">
+            <button type="button" class="select-trigger" id="select-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="selected-text" id="selected-text">Tugmalar (Buttons)</span>
+              <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="select-menu" id="select-menu" role="listbox">
+              <!-- JS orqali dinamik to'ldiriladi -->
+            </div>
+            <input type="hidden" id="live-dropdown" value="button">
+          </div>
+        </div>
+
+        <!-- 3. YAGONA VA TOZA OPENAI INSPECTOR KONSOLI -->
+        <div class="inspector-console">
+          <div class="inspector-header">
+            <div class="inspector-tabs">
+              <button class="inspector-tab-btn active" data-target="pane-response">Response JSON</button>
+              <button class="inspector-tab-btn" data-target="pane-sql">SQL Query</button>
+              <button class="inspector-tab-btn" data-target="pane-pydantic">Pydantic Schema</button>
+              <button class="inspector-tab-btn" data-target="pane-request">HTTP Request</button>
+            </div>
+            <div class="inspector-actions">
+              <span class="latency-indicator" id="latency-badge">0 ms</span>
+              <button class="copy-btn" title="Copy code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 1. RESPONSE PANE -->
+          <div class="inspector-pane active" id="pane-response">
+            <pre><code id="out-json">Awaiting response...</code></pre>
+          </div>
+
+          <!-- 2. SQL PANE -->
+          <div class="inspector-pane" id="pane-sql">
+            <pre><code id="out-sql">Generating query...</code></pre>
+          </div>
+
+          <!-- 3. PYDANTIC PANE -->
+          <div class="inspector-pane" id="pane-pydantic">
+            <pre><code id="out-pydantic">Validating schema...</code></pre>
+          </div>
+
+          <!-- 4. REQUEST PANE -->
+          <div class="inspector-pane" id="pane-request">
+            <pre><code id="out-request">Connecting...</code></pre>
+          </div>
+        </div>
+
+
+
+        <!-- QUTI 1: FASTAPI ROUTER ENDPOINT -->
+        <div class="reference-section">
+          <div class="reference-header">
+            <span>1. FastAPI Router Endpoint (Controller)</span>
+            <div class="ref-header-right">
+              <span class="ref-tag">app/api/v1/endpoints/components.py</span>
+              <button class="ref-copy-btn" title="Kodni nusxalash" aria-label="Copy endpoint code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div style="padding: 1.35rem 1.65rem; background: var(--bg-code);">
+            <pre><code><span class="tok-comment"># app/api/v1/endpoints/components.py</span>
+<span class="tok-decorator">@router.get</span>(<span class="tok-string">"/dropdown/inspect"</span>)
+<span class="tok-keyword">def</span> <span class="tok-func">inspect_dropdown_action</span>(
+    <span class="tok-param">selected_option</span>: <span class="tok-type">str</span> = <span class="tok-type">Query</span>(<span class="tok-keyword">default</span>=<span class="tok-string">"button"</span>, <span class="tok-param">description</span>=<span class="tok-string">"Selected option"</span>),
+    <span class="tok-param">db</span>: <span class="tok-type">Session</span> = <span class="tok-type">Depends</span>(<span class="tok-func">get_db</span>)
+):
+    <span class="tok-keyword">if</span> selected_option == <span class="tok-string">"all"</span>:
+        sql_string = <span class="tok-string">"SELECT * FROM components;"</span>
+        result_data = db.query(<span class="tok-type">Component</span>).all()
+    <span class="tok-keyword">else</span>:
+        sql_string = <span class="tok-string">f"SELECT * FROM components WHERE status = 'draft' AND slug ILIKE '%{selected_option}%';"</span>
+        result_data = db.query(<span class="tok-type">Component</span>).filter(<span class="tok-type">Component</span>.slug.ilike(<span class="tok-string">f"%{selected_option}%"</span>)).all()
+
+    <span class="tok-keyword">return</span> {
+        <span class="tok-string">"telemetry"</span>: {
+            <span class="tok-string">"http_request"</span>: {
+                <span class="tok-string">"method"</span>: <span class="tok-string">"GET"</span>,
+                <span class="tok-string">"endpoint"</span>: <span class="tok-string">f"/components/dropdown/inspect?selected_option={selected_option}"</span>,
+                <span class="tok-string">"status_code"</span>: <span class="tok-val-num">200</span>,
+            },
+            <span class="tok-string">"pydantic_validation"</span>: {
+                <span class="tok-string">"param_name"</span>: <span class="tok-string">"selected_option"</span>,
+                <span class="tok-string">"received_value"</span>: selected_option,
+                <span class="tok-string">"expected_type"</span>: <span class="tok-string">"string"</span>,
+                <span class="tok-string">"validation_status"</span>: <span class="tok-string">"valid"</span>,
+            },
+            <span class="tok-string">"executed_sql"</span>: sql_string,
+        },
+        <span class="tok-string">"response_data"</span>: result_data
+    }</code></pre>
+          </div>
+        </div>
+
+        <!-- QUTI 2: PYDANTIC DATA SCHEMAS -->
+        <div class="reference-section">
+          <div class="reference-header">
+            <span>2. Pydantic Schemas (Data Contract & Validation)</span>
+            <div class="ref-header-right">
+              <span class="ref-tag">app/schemas/component.py</span>
+              <button class="ref-copy-btn" title="Kodni nusxalash" aria-label="Copy schema code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div style="padding: 1.35rem 1.65rem; background: var(--bg-code);">
+            <pre><code><span class="tok-comment"># app/schemas/component.py</span>
+<span class="tok-keyword">from</span> pydantic <span class="tok-keyword">import</span> <span class="tok-type">BaseModel</span>
+<span class="tok-keyword">from</span> typing <span class="tok-keyword">import</span> <span class="tok-type">Optional</span>
+
+
+<span class="tok-keyword">class</span> <span class="tok-type">ComponentBase</span>(<span class="tok-type">BaseModel</span>):
+    <span class="tok-param">name</span>: <span class="tok-type">str</span>
+    <span class="tok-param">slug</span>: <span class="tok-type">str</span>
+    <span class="tok-param">description</span>: <span class="tok-type">Optional</span>[<span class="tok-type">str</span>] = <span class="tok-keyword">None</span>
+    <span class="tok-param">status</span>: <span class="tok-type">str</span> = <span class="tok-string">"draft"</span>
+
+
+<span class="tok-keyword">class</span> <span class="tok-type">ComponentCreate</span>(<span class="tok-type">ComponentBase</span>):
+    <span class="tok-keyword">pass</span>
+
+
+<span class="tok-keyword">class</span> <span class="tok-type">ComponentResponse</span>(<span class="tok-type">ComponentBase</span>):
+    <span class="tok-param">id</span>: <span class="tok-type">int</span>
+
+    <span class="tok-keyword">class</span> <span class="tok-type">Config</span>:
+        <span class="tok-param">from_attributes</span> = <span class="tok-keyword">True</span></code></pre>
+          </div>
+        </div>
+
+        <!-- QUTI 3: SQLALCHEMY DATABASE MODEL -->
+        <div class="reference-section">
+          <div class="reference-header">
+            <span>3. SQLAlchemy ORM Model (PostgreSQL Table)</span>
+            <div class="ref-header-right">
+              <span class="ref-tag">app/models/component.py</span>
+              <button class="ref-copy-btn" title="Kodni nusxalash" aria-label="Copy model code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div style="padding: 1.35rem 1.65rem; background: var(--bg-code);">
+            <pre><code><span class="tok-comment"># app/models/component.py</span>
+<span class="tok-keyword">from</span> sqlalchemy <span class="tok-keyword">import</span> <span class="tok-type">Column</span>, <span class="tok-type">Integer</span>, <span class="tok-type">String</span>, <span class="tok-type">Text</span>
+<span class="tok-keyword">from</span> app.db.base <span class="tok-keyword">import</span> <span class="tok-type">Base</span>
+
+
+<span class="tok-keyword">class</span> <span class="tok-type">Component</span>(<span class="tok-type">Base</span>):
+    <span class="tok-param">__tablename__</span> = <span class="tok-string">"components"</span>
+
+    <span class="tok-param">id</span> = <span class="tok-type">Column</span>(<span class="tok-type">Integer</span>, <span class="tok-param">primary_key</span>=<span class="tok-keyword">True</span>, <span class="tok-param">index</span>=<span class="tok-keyword">True</span>)
+    <span class="tok-param">name</span> = <span class="tok-type">Column</span>(<span class="tok-type">String</span>(<span class="tok-val-num">50</span>), <span class="tok-param">index</span>=<span class="tok-keyword">True</span>)
+    <span class="tok-param">slug</span> = <span class="tok-type">Column</span>(<span class="tok-type">String</span>(<span class="tok-val-num">50</span>), <span class="tok-param">index</span>=<span class="tok-keyword">True</span>)
+    <span class="tok-param">description</span> = <span class="tok-type">Column</span>(<span class="tok-type">Text</span>, <span class="tok-param">nullable</span>=<span class="tok-keyword">True</span>)
+    <span class="tok-param">status</span> = <span class="tok-type">Column</span>(<span class="tok-type">String</span>, <span class="tok-param">default</span>=<span class="tok-string">"draft"</span>)</code></pre>
+          </div>
+        </div>
+
+
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Tashqi (External) JS Modul -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

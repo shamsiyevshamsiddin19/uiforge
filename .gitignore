@@ -1,0 +1,14 @@
+# Python & Virtualenv
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# Tests & IDE
+.pytest_cache/
+.vscode/
+.idea/
+*.swp
+.DS_Store

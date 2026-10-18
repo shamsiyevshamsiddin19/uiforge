@@ -1,0 +1,115 @@
+:root {
+  /* ==========================================================================
+     Qora Mavzu (Default Dark Theme - OLED Black)
+     ========================================================================== */
+  --bg-body: #000000;
+  --bg-sidebar: #000000;
+  --bg-surface: #171717;
+  --bg-surface-elevated: #1e1e1e;
+  --bg-bar: #212121;
+  --bg-bar-hover: #262626;
+  --bg-code: #0a0a0a;
+  --bg-console: #111111;
+  --bg-console-header: #161616;
+  --bg-console-tab-active: #242424;
+  --bg-pill-active: #2f2f2f;
+  --text-pill-active: #ffffff;
+
+  /* Nozik 1px hairlinelar */
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --border-focus: #10a37f;
+
+  /* Soyalar */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-elevated: 0 6px 30px rgba(0, 0, 0, 0.5);
+
+  /* Matn ranglari */
+  --text-main: #f9f9f9;
+  --text-muted: #b4b4b4;
+  --text-subtle: #737373;
+  --text-code: #e5e7eb;
+
+  /* OpenAI Yashil Urg'usi */
+  --primary: #10a37f;
+  --primary-hover: #0e8c6d;
+  --primary-glow: rgba(16, 163, 127, 0.2);
+
+  /* Kod Sintaksis Ranglari (Dark Mode) */
+  --tok-keyword: #f472b6;
+  --tok-decorator: #34d399;
+  --tok-string: #fbbf24;
+  --tok-comment: #71717a;
+  --tok-func: #60a5fa;
+  --tok-type: #a78bfa;
+  --tok-param: #e2e8f0;
+  --tok-key: #93c5fd;
+  --tok-val-num: #67e8f9;
+  --tok-val-bool: #f472b6;
+
+  /* Shriftlar */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, monospace;
+
+  /* O'lchamlar va Nafis Raduslar */
+  --header-height: 54px;
+  --sidebar-width: 260px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 20px;
+  --radius-bar: 28px;
+  --radius-pill: 9999px;
+}
+
+/* ==========================================================================
+   Yorug' Mavzu (High-Contrast, Ergonomik va O'qishga Qulay Light Theme)
+   ========================================================================== */
+[data-theme="light"] {
+  --bg-body: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-bar: #f1f5f9;
+  --bg-bar-hover: #e2e8f0;
+  --bg-code: #f8fafc;
+  --bg-console: #ffffff;
+  --bg-console-header: #f8fafc;
+  --bg-console-tab-active: #ffffff;
+  --bg-pill-active: #ffffff;
+  --text-pill-active: #0f172a;
+
+  /* Aniq va nafis 1px chegaralar yorug' rejimda */
+  --border-hairline: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  --border-hover: #94a3b8;
+  --border-focus: #10a37f;
+
+  /* Matn ranglari (Yuqori kontrastli, ko'zni toliqtirmaydigan) */
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-subtle: #64748b;
+  --text-code: #0f172a;
+
+  /* OpenAI Yashil Urg'usi */
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-glow: rgba(5, 150, 105, 0.18);
+
+  /* Soyalar (Yorug' rejimda chuqurlik va vizual ajralish berish uchun) */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.06);
+
+  /* Kod Sintaksis Ranglari (Light Mode - Yuqori O'qiluvchanlik) */
+  --tok-keyword: #7c3aed;
+  --tok-decorator: #059669;
+  --tok-string: #b45309;
+  --tok-comment: #64748b;
+  --tok-func: #2563eb;
+  --tok-type: #0891b2;
+  --tok-param: #1e293b;
+  --tok-key: #0f172a;
+  --tok-val-num: #2563eb;
+  --tok-val-bool: #7c3aed;
+}
+

@@ -1,0 +1,19 @@
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, select, textarea {
+  font: inherit;
+}

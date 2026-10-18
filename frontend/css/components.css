@@ -1,0 +1,728 @@
+/* ==========================================================================
+   UIForge Components & Interactive Stage
+   OpenAI ChatGPT "Nafis" (Refined) Design System
+   ========================================================================== */
+
+/* 1. TO'G'RI TO'RTBURCHAK RAMKA (COMPONENT CANVAS) */
+.component-canvas {
+  background-color: var(--bg-console);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2.25rem;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+[data-theme="light"] .component-canvas {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* OPENAI USLUBIDAGI NAFIS DROPDOWN */
+.custom-select-widget {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  user-select: none;
+}
+
+.select-trigger {
+  width: 100%;
+  height: 38px;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.select-trigger:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-surface-elevated);
+}
+
+.custom-select-widget.open .select-trigger,
+.select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+.selected-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.custom-select-widget.open .select-chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* Ochiluvchi menyu */
+.select-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  pointer-events: none;
+}
+
+.custom-select-widget.open .select-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.select-option {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.select-option:hover {
+  background: var(--bg-bar-hover);
+  color: var(--text-main);
+}
+
+.select-option.active {
+  background: rgba(16, 163, 127, 0.12);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.select-option .check-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--primary);
+  display: none;
+}
+
+.select-option.active .check-icon {
+  display: block;
+}
+
+/* Yorug' mavzu uchun moslashtirish */
+[data-theme="light"] .select-trigger {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .select-trigger:hover {
+  border-color: #94a3b8;
+}
+
+[data-theme="light"] .custom-select-widget.open .select-trigger {
+  border-color: #059669;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
+}
+
+[data-theme="light"] .select-menu {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .select-option {
+  color: #334155;
+}
+
+[data-theme="light"] .select-option:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+[data-theme="light"] .select-option.active {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+[data-theme="light"] .select-option.active .check-icon {
+  color: #047857;
+}
+
+/* 2. TUSHUNTIRISH MATNI (DOCS SECTION) */
+.component-docs {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.docs-title {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.docs-desc {
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: var(--text-muted);
+  max-width: 780px;
+}
+
+.docs-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.feature-label {
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.feature-text {
+  color: var(--text-muted);
+}
+
+.openai-pill-bar {
+  width: 100%;
+  max-width: 780px;
+  height: 56px;
+  background: var(--bg-bar);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-bar);
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 14px;
+  gap: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.openai-pill-bar:hover,
+.openai-pill-bar:focus-within {
+  border-color: var(--border-hover);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+  background: var(--bg-bar-hover);
+}
+
+/* Chap tomondagi aylana plyus tugmasi */
+.bar-prefix-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.bar-prefix-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.bar-prefix-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+/* O'rtadagi Shaffof Nafis Select */
+.bar-select-control {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 1.5rem;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238e8e8e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.2rem center;
+}
+
+.bar-select-control option {
+  background: #1e1e1e;
+  color: #ececec;
+  padding: 0.5rem;
+}
+
+/* O'ng tomondagi actionlar (Think/SQL pill va circular action) */
+.bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bar-badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  padding: 4px 11px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.bar-badge-pill svg {
+  width: 13px;
+  height: 13px;
+  color: var(--primary);
+}
+
+.bar-send-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.bar-send-btn:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.bar-send-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+}
+
+/* 3. JONLI VIZUAL NATIJA KARTASI (ChatGPT "Intelligent UI" Kartasi Uslubida) */
+.preview-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.preview-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.preview-card-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.preview-status-pill {
+  font-size: 0.72rem;
+  color: var(--primary);
+  background: rgba(16, 163, 127, 0.1);
+  border: 1px solid rgba(16, 163, 127, 0.2);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+}
+
+.live-preview-box {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 54px;
+  padding: 0.5rem 0;
+}
+
+/* Nafis Pill Tugmalar */
+.preview-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preview-btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.preview-btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.preview-btn-secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.preview-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+}
+
+/* Nafis Pill Input */
+.preview-input-sample {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.65rem 1.15rem;
+  background: var(--bg-bar);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.preview-input-sample:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+/* 4. YAGONA OPENAI INSPECTOR KONSOLI (Pill Tablar Bilan) */
+.inspector-console {
+  background: var(--bg-console);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.inspector-console.active-ping {
+  border-color: rgba(16, 163, 127, 0.45);
+}
+
+.inspector-header {
+  background: var(--bg-console-header);
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  gap: 1rem;
+}
+
+.inspector-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.inspector-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.inspector-tab-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-bar-hover);
+}
+
+.inspector-tab-btn.active {
+  background: var(--bg-console-tab-active);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inspector-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.latency-indicator {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--primary);
+  background: rgba(16, 163, 127, 0.1);
+  border: 1px solid rgba(16, 163, 127, 0.2);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+}
+
+.copy-btn {
+  background: var(--bg-bar);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.copy-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.copy-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-bar-hover);
+  border-color: var(--border-subtle);
+}
+
+.inspector-pane {
+  display: none;
+  padding: 1.35rem 1.65rem;
+  background: var(--bg-code);
+  min-height: 120px;
+}
+
+.inspector-pane.active {
+  display: block;
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.72;
+  color: var(--text-code);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+code {
+  font-family: inherit;
+}
+
+/* Kod Sintaksisini Ajratish (Syntax Highlighting) */
+.tok-comment {
+  color: var(--tok-comment);
+  font-style: italic;
+}
+
+.tok-decorator {
+  color: var(--tok-decorator);
+  font-weight: 500;
+}
+
+.tok-keyword {
+  color: var(--tok-keyword);
+  font-weight: 600;
+}
+
+.tok-func {
+  color: var(--tok-func);
+  font-weight: 500;
+}
+
+.tok-string {
+  color: var(--tok-string);
+}
+
+.tok-type {
+  color: var(--tok-type);
+  font-weight: 500;
+}
+
+.tok-param {
+  color: var(--tok-param);
+}
+
+.tok-key {
+  color: var(--tok-key);
+  font-weight: 500;
+}
+
+.tok-val-num {
+  color: var(--tok-val-num);
+}
+
+.tok-val-bool {
+  color: var(--tok-val-bool);
+  font-weight: 600;
+}
+
+/* 5. ARXITEKTURA VA KODLAR BO'LIMI */
+
+.reference-section {
+  background: var(--bg-console);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1.75rem;
+}
+
+.reference-header {
+  background: var(--bg-console-header);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 0.85rem 1.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ref-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ref-tag {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--primary);
+  background: rgba(16, 163, 127, 0.08);
+  border: 1px solid rgba(16, 163, 127, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+
+.ref-copy-btn {
+  background: var(--bg-bar);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.ref-copy-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+.ref-copy-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-bar-hover);
+  border-color: var(--border-subtle);
+}
+
+/* Yorug' mavzu uchun maxsus nozik urg'ular */
+[data-theme="light"] .latency-indicator {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
+  font-weight: 600;
+}
+
+[data-theme="light"] .ref-tag {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
+  font-weight: 500;
+}
+
+[data-theme="light"] .copy-btn {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+[data-theme="light"] .copy-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
