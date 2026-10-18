@@ -2,7 +2,8 @@
  * UIForge API Client
  * FastAPI serveri bilan muloqot qiluvchi barcha so'rovlar shu yerda saqlanadi.
  */
-const API_BASE_URL = 'http://localhost:8000/components';
+// Dinamik API manzili (localhostda ham, AWS serverida ham avtomatik ishlaydi)
+const API_BASE_URL = '/components';
 
 export async function fetchDropdownOptions() {
   const response = await fetch(`${API_BASE_URL}/dropdown/options`);
